@@ -14,7 +14,7 @@ public interface CityService {
      * @param city
      * @return
      */
-    Long saveCity(City city);
+    String saveCity(City city);
 
     /**
      * 根据关键词，function score query 权重分分页查询
