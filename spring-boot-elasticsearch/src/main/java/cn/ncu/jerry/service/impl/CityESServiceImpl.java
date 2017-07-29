@@ -23,6 +23,10 @@ import java.util.List;
  * 城市 ES 业务逻辑实现类
  *
  * Created by Jiacheng on 2017/7/25.
+ *
+ * 分页 function score query 搜索逻辑如下：
+ * 先创建分页参数，然后用 FunctionScoreQueryBuilder 定义 Function Score Query，并设置对应字段的权重分值。城市名称 1000 分，description 100 分
+ * 然后创建该搜索的 DSL 查询，并打印
  */
 @Service
 public class CityESServiceImpl implements CityService {
@@ -52,9 +56,7 @@ public class CityESServiceImpl implements CityService {
                         ScoreFunctionBuilders.weightFactorFunction(100));
 
         // 创建搜索 DSL (Domain Specific Language特定领域语言) 查询
-        SearchQuery searchQuery = new NativeSearchQueryBuilder()
-                .withPageable(pageable)
-                .withQuery(functionScoreQueryBuilder).build();
+        SearchQuery searchQuery = new NativeSearchQueryBuilder().withPageable(pageable).withQuery(functionScoreQueryBuilder).build();
 
         LOGGER.info("\n searchCity(): searchContent [" + searchContent + "] \n DSL  = \n " + searchQuery.getQuery().toString());
 
