@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <name>Spring-Boot-Tech-Repository</name>
+
+    <groupId>cn.ncu.jerry</groupId>
+    <artifactId>Spring-Boot-Tech-Repository</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <!-- Spring Boot 整合 Elasticsearch，实现 function score query 权重分查询 -->
+        <module>spring-boot-elasticsearch</module>
+        <!-- Spring Boot 实现 Restful 服务，基于 HTTP / JSON 传输 -->
+        <module>spring-boot-restful</module>
+    </modules>
+
+</project>
